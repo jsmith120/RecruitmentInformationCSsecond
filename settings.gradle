@@ -1,0 +1,2 @@
+rootProject.name='Recruitment Information CS'
+include ':app'
