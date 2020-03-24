@@ -29,7 +29,7 @@ public class tab1 extends Fragment {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_tab1, container, false);
 
-        View v = inflater.inflate(R.layout.fragment_tab3, null);
+        View v = inflater.inflate(R.layout.fragment_tab1, null);
 
         ExpandableListView elv = (ExpandableListView) v.findViewById(R.id.list);
         elv.setAdapter(new tab1.SavedTabsListAdapter());

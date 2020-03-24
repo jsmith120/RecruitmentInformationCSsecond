@@ -26,7 +26,7 @@ public class tab2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.fragment_tab3, null);
+        View v = inflater.inflate(R.layout.fragment_tab2, null);
         ExpandableListView elv = (ExpandableListView) v.findViewById(R.id.list);
         elv.setAdapter(new tab2.SavedTabsListAdapter());
         return v;
