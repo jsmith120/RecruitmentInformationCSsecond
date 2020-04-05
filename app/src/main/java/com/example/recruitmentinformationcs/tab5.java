@@ -3,6 +3,7 @@ package com.example.recruitmentinformationcs;
 import android.app.DownloadManager;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,16 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+import com.android.volley.toolbox.JsonObjectRequest;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -38,8 +49,34 @@ public class tab5 extends Fragment {
 
         ExpandableListView elv = (ExpandableListView) v.findViewById(R.id.list);
         elv.setAdapter(new SavedTabsListAdapter());
-        return v;
 
+
+        /*String URL = "http://192.168.1.136:8000/get-all-contacts/";
+
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
+
+        JsonArrayRequest arrayRequest = new JsonArrayRequest(
+                Request.Method.GET,
+                URL,
+                null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        Log.e("successful Rest Response", response.toString());
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("failed Rest Response", error.toString());
+                    }
+                }
+        );
+        requestQueue.add(arrayRequest);*/
+
+
+
+        return v;
     }
 
     public class SavedTabsListAdapter extends BaseExpandableListAdapter {
@@ -127,4 +164,3 @@ public class tab5 extends Fragment {
         }
     }
 }
-

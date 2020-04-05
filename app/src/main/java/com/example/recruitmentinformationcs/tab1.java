@@ -3,14 +3,19 @@ package com.example.recruitmentinformationcs;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.CalendarView;
 import android.widget.ExpandableListView;
+import android.widget.TextClock;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 
 /**
@@ -22,6 +27,7 @@ public class tab1 extends Fragment {
         // Required empty public constructor
     }
 
+    private CalendarView mCalendarView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,14 +35,55 @@ public class tab1 extends Fragment {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_tab1, container, false);
 
-        View v = inflater.inflate(R.layout.fragment_tab1, null);
+        final View v = inflater.inflate(R.layout.fragment_tab1, null);
 
-        ExpandableListView elv = (ExpandableListView) v.findViewById(R.id.list);
-        elv.setAdapter(new tab1.SavedTabsListAdapter());
+        /*ExpandableListView elv = (ExpandableListView) v.findViewById(R.id.list);
+        elv.setAdapter(new tab1.SavedTabsListAdapter());*/
+
+
+        mCalendarView = (CalendarView) v.findViewById(R.id.calendarView);
+
+        mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
+                String date = (i1 + 1) + "/" + i2 + "/" + i;
+                TextView events = v.findViewById(R.id.event);
+                TextView dates = v.findViewById(R.id.date);
+                TextView times = v.findViewById(R.id.time);
+                TextView locations = v.findViewById(R.id.location);
+                TextView descriptions = v.findViewById(R.id.description);
+
+
+
+                if ((i1 + 1) == 3 && i2 == 25 && i == 2020)
+                {
+                    events.setText("Faculty Candidate Presentation");
+                    dates.setText("Date: 3/25/2020");
+                    times.setText("Time: 12:45-1:30pm");
+                    locations.setText("Location: Online @ https://semo.zoom.us/j/169596589");
+                    descriptions.setText("Description: Online presentation by faculty Candidate Dr. Ji Li");
+                }
+                else
+                {
+                    events.setText("");
+                    dates.setText("");
+                    times.setText("");
+                    locations.setText("");
+                    descriptions.setText("");
+                }
+
+
+            }
+        });
+
+
+
+
+
         return v;
     }
 
-    public class SavedTabsListAdapter extends BaseExpandableListAdapter {
+    /*public class SavedTabsListAdapter extends BaseExpandableListAdapter {
 
         private String[] groups = {"Faculty Candidate Presentation",
                 "Faculty Candidate Presentation",
@@ -105,6 +152,6 @@ public class tab1 extends Fragment {
         public boolean isChildSelectable(int i, int i1) {
             return true;
         }
-    }
+    }*/
 
 }
