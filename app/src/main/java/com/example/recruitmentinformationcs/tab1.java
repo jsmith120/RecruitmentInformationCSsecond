@@ -63,6 +63,30 @@ public class tab1 extends Fragment {
                     locations.setText("Location: Online @ https://semo.zoom.us/j/169596589");
                     descriptions.setText("Description: Online presentation by faculty Candidate Dr. Ji Li");
                 }
+                else if ((i1 + 1) == 3 && i2 == 26 && i == 2020)
+                {
+                    events.setText("Faculty Candidate Presentation");
+                    dates.setText("Date: 3/26/2020");
+                    times.setText("Time: 8:45-9:30am");
+                    locations.setText("Location: Online @ https://semo.zoom.us/j/888925852");
+                    descriptions.setText("Description: Online presentation by faculty Candidate Dr. Robert Lowe");
+                }
+                else if ((i1 + 1) == 3 && i2 == 27 && i == 2020)
+                {
+                    events.setText("Faculty Candidate Presentation");
+                    dates.setText("Date: 3/27/2020");
+                    times.setText("Time: 8:45-9:30am");
+                    locations.setText("Location: Online @ https://semo.zoom.us/j/194693200");
+                    descriptions.setText("Description: Online presentation by faculty Candidate Dr. Wee Wee Sim");
+                }
+                else if ((i1 + 1) == 5 && i2 == 16 && i == 2020)
+                {
+                    events.setText("Commencement Ceremony");
+                    dates.setText("Date: 5/16/2020");
+                    times.setText("Time: 10:00am");
+                    locations.setText("Location: Show Me Center");
+                    descriptions.setText("Description: Commencement ceremony for senior College of Business students.");
+                }
                 else
                 {
                     events.setText("");

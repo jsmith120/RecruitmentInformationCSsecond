@@ -43,8 +43,8 @@ public class tab2 extends Fragment {
         private String[][] children = {
                 {"Description: Due to the COVID-19 outbreak, all in-person classes" +
                         "have been moved to online delivery methods. Instructors will" +
-                        "contact students with more details.",
-                "After winning their eighth straight state championship, they will be" +
+                        "contact students with more details."},
+                {"After winning their eighth straight state championship, they will be" +
                         "moving on to the Erich J. Spenger Midwest Regional Collegiate" +
                         "Cyber Defense Competition."}
         };
